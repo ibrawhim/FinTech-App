@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;900&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    font-family: 'DM Serif Display', serif;
+  }
+  ul li a:hover, .flex-shrink-0, .container-fluid {
+    color: white !important;
+    background-color: #2ca1a8 !important;
+  }
+</style>
+<body>
+    <div class="container-fluid">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+              <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+            </a>
+          </div>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2">Home</a></li>
+            <li><a href="#" class="nav-link px-2">Features</a></li>
+            <li><a href="#" class="nav-link px-2">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2">About</a></li>
+          </ul>
+    
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-primary me-2">Login</button>
+            <button type="button" class="btn btn-primary">Sign-up</button>
+          </div>
+        </header>
+      </div>
+
+  <section class="d-flex">
+    <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 200px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi pe-none" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-4" id="dispFirst"></span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+            History
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+            Transfer
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+            Bills
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+            Airtime
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Customers
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Private Policy
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Logout
+          </a>
+        </li>
+      </ul>
+      </div>
+      <div class="d-flex">
+        <div class=" m-5 rounded-3 w-50">
+          <img src="./images/classic-removebg-preview.png" width="100%" alt="">
+        </div>
+        <div class=" m-5 rounded-3 w-50">
+          <h6>Name:</h6>
+          <h3 id="dispName"></h3>
+          <h6>Account:</h6>
+          <h2 id="dispAcct"></h2>
+          <h6>Total Balance:</h6>
+          <h2 id="dispBal"></h2>
+          <div id="dat"></div>
+        </div>
+      </div>
+      <hr>
+  </section>
+    
+  <script>
+      
+      let userProfile = JSON.parse(localStorage.getItem("newInputs"))
+      
+      dispFirst.innerHTML = `Hi ${userProfile.firstName}`
+      dispName.innerHTML = `${userProfile.lastName} ${userProfile.firstName}  ${userProfile.middleName}`
+      dispAcct.innerHTML = `${userProfile.accountNumber}`
+      dispBal.innerHTML = `$${userProfile.Balance}.00`
+      
+
+      
+</script>
+</body>
+</html>

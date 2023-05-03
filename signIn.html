@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<style>
+  button {
+    background-color: #2ca1a8 !important;
+  }
+  a {
+    text-decoration: none;
+    color: #2ca1a8;
+  }
+</style>
+<body>
+    <div class="d-flex border">
+      <div class="w-50">
+        <img src="./images/omid-armin-8Nppe0yLmn8-unsplash.jpg" width="100%" alt="">
+      </div>
+      <div class="d-flex border w-50 flex-column justify-content-center align-items-center">
+        <h4>Welcome Back!</h4>
+        <p>Start Managing Your Finance Better</p>
+        <input type="text" placeholder="Enter Your Email" class="form-control w-50 my-2" id="mail">
+        <input type="text" placeholder="Enter Password" class="form-control w-50 mt-2" id="pass">
+        <a href="" class="ms-5 ps-5">Forgot Password?</a>
+        <button class="btn w-50 text-light my-1" onclick="signIn()">Sign In</button>
+      </div>
+    </div>
+
+    <script>
+         let userProfile = JSON.parse(localStorage.getItem("customerInput"))
+        const signIn = () => {
+                userFound = false
+          for (let index = 0; index < userProfile.length; index++) {
+            if(mail.value==userProfile[index].email && pass.value==userProfile[index].password) {
+              localStorage.setItem("newInputs", JSON.stringify(userProfile[index]))
+              userFound = true
+                break;
+            }
+          }
+          if(userFound==true) {
+            window.location.href = "dashboard.html"
+          }
+        }
+    </script>
+</body>
+</html>

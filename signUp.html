@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;900&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-image: url(./images/christine-roy-ir5MHI6rPg0-unsplash.jpg);
+        background-size: 100%;
+        background-position: 0% 60%;
+    }
+    button, h3 {
+        background-color: #2ca1a8 !important;
+        font-family: 'DM Serif Display', serif;
+
+    }
+</style>
+<body>
+    <div></div>
+    <div class="inputs w-50 my-5 mx-auto">
+        <h3 class="text-light pb-2 rounded-3 text-center">Create An Account</h3>
+        <input type="text" class="form-control my-2" placeholder="First Name" id="fn">
+        <input type="text" class="form-control my-2" placeholder="Last Name" id="ln">
+        <input type="text" class="form-control my-2" placeholder="Middle Name" id="mn">
+        <select name="Gender" id="gender" class="form-select">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+        </select>
+        <input type="text" class="form-control my-2" placeholder="Email Address" id="mail">
+        <input type="text" class="form-control my-2" placeholder="BVN" id="bvn">
+        <input type="text" class="form-control my-2" placeholder="Address" id="add">
+        <input type="text" class="form-control my-2" placeholder="Next Of Kin" id="next">
+        <input type="text" class="form-control my-2" placeholder="Password" id="pass">
+        <button class="btn w-100 text-light" onclick="createAccount()">Create Account</button>
+
+
+
+        <script>
+            let userProfile = []
+            if(localStorage.customerInput) {
+            userProfile = JSON.parse(localStorage.getItem("customerInput"))
+        }
+
+            const createAccount = () => {
+                let user = {
+                firstName: fn.value,
+                lastName: ln.value,
+                middleName: mn.value,
+                email: mail.value,
+                bvn: bvn.value,
+                address: add.value,
+                nok: next.value,
+                password: pass.value,
+                Gender:gender.value,
+                Balance : 1000.00,
+                accountNumber: `123${Math.round(Math.random()*10000000)}`
+            }
+            userProfile.push(user)
+            console.log(userProfile);
+            localStorage.setItem("customerInput",JSON.stringify(userProfile))
+            window.location.href = "signIn.html"
+            }
+        </script>
+    </div>
+</body>
+</html>

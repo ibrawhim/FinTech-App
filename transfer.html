@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Account" id="acct">
+    <input type="text" placeholder="Amount" id="amount">
+    <button onclick="transfer()">Transfer</button>
+
+    <div id="disp"></div>
+    
+
+    <script>
+        let allAccounts = JSON.parse(localStorage.getItem("newInputs"))
+        let userProfile = JSON.parse(localStorage.getItem("customerInput"))
+        // console.log(userProfile.Balance);
+        // console.log(allAccounts)
+
+
+
+        const transfer = () => {
+            for (let index = 0; index < userProfile.length; index++) {
+                if(acct.value==userProfile[index].accountNumber) {
+                    newReceiverValue = userProfile[index].Balance + Number(amount.value)
+                    newBalance = allAccounts.Balance -  Number(amount.value)
+                    disp.innerHTML = newReceiverValue
+                    localStorage.getItem(userProfile[index].Balance)
+                    localStorage.setItem(userProfile[index].Balance, newReceiverValue)
+                }    
+            }
+        }
+    </script>
+</body>
+</html>
