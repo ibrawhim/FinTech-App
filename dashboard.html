@@ -6,20 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:wght@400;900&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    body {
+      font-family: 'DM Serif Display', serif;
+    }
+    ul li a:hover, .flex-shrink-0, .container-fluid, .h-50 {
+      color: white !important;
+      background-color: #2ca1a8 !important;
+    }
+  .blinear {
+    background-image:linear-gradient(rgba(89, 88, 88, 0), rgba(16, 15, 15, 1)), url(./images/omid-armin-8Nppe0yLmn8-unsplash.jpg);
+    background-size: cover;
+  }
+  </style>
   <title>Document</title>
 </head>
-<style>
-  body {
-    font-family: 'DM Serif Display', serif;
-  }
-  ul li a:hover, .flex-shrink-0, .container-fluid {
-    color: white !important;
-    background-color: #2ca1a8 !important;
-  }
-</style>
 <body>
     <div class="container-fluid border">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
           <div class="col-md-3 mb-2 mb-md-0">
             <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
               <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
@@ -27,16 +35,16 @@
           </div>
     
           <ul class="nav col-12 col-md-auto justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2">Home</a></li>
-            <li><a href="#" class="nav-link px-2">Features</a></li>
-            <li><a href="#" class="nav-link px-2">Pricing</a></li>
-            <li><a href="#" class="nav-link px-2">FAQs</a></li>
-            <li><a href="#" class="nav-link px-2">About</a></li>
+            <li><a href="#" class="nav-link text-dark px-2">Accounts</a></li>
+            <li><a href="#" class="nav-link text-dark mx-5 px-2">Manage</a></li>
+            <li><a href="#" class="nav-link text-dark mx-5 px-2">Pay</a></li>
+            <li><a href="#" class="nav-link text-dark mx-5 px-2">More</a></li>
+            <li><a href="#" class="nav-link text-dark mx-5 px-2">About</a></li>
           </ul>
     
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <button type="button" class="btn btn-outline-dark me-2">Login</button>
+            <button type="button" class="btn btn-dark">Sign-up</button>
           </div>
         </header>
       </div>
@@ -113,18 +121,20 @@
         </li>
       </ul>
       </div>
-      <div class="d-flex border border-info">
-        <div class="pt-3 ps-5 m-5 rounded-5 shadow w-50 h-50">
-          <img src="./images/5f3391eb341718f001f3cc474af1ad61-removebg-preview.png" width="60%" alt="">
+      <div class="d-flex blinear">
+        <div class=" pt-4 ps-5 m-5 rounded-5 shadow w-50 h-50 animate__animated animate__backInLeft">
+          <p class="fs-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam enim deserunt sed vel natus est alias nemo nihil nesciunt eligendi?</p>
+          <!-- <img class="mb-3" src="./images/5f3391eb341718f001f3cc474af1ad61-removebg-preview.png" width="45%" alt=""> -->
+          <!-- <img class="mb-3" src="./images/download-removebg-preview (1).png" width="40%" alt=""> -->
         </div>
-        <div class=" m-5 border rounded-5 ps-5 shadow pt-5 w-50 h-50">
+        <div class=" m-5 border rounded-5  shadow pt-5 w-50 h-50 animate__animated animate__backInRight">
           <!-- <h3>Name:</h6> -->
-          <h2 id="dispName"></h2>
+          <h2 class="border" id="dispName"></h2>
           <!-- <h3>Account:</h6> -->
-          <h2 id="dispAcct"></h2>
+          <h2 class="border" id="dispAcct"></h2>
           <!-- <h3>Total Balance:</h6> -->
-          <h2 id="dispBal"></h2>
-          <div id="dat"></div>
+          <h2 class="border" id="dispBal"></h2>
+          <h2 class="border" id="dat"></h2>
         </div>
       </div>
       <hr>
@@ -135,9 +145,10 @@
       let userProfile = JSON.parse(localStorage.getItem("newInputs"))
       
       dispFirst.innerHTML = `Hi ${userProfile.firstName}`
-      dispName.innerHTML = `NAME: ${userProfile.lastName} ${userProfile.firstName}  ${userProfile.middleName}`
-      dispAcct.innerHTML = `ACCOUNT: ${userProfile.accountNumber}`
-      dispBal.innerHTML = `BALANCE: $${userProfile.Balance}.00`
+      dispName.innerHTML = `Name: ${userProfile.lastName} ${userProfile.firstName}  ${userProfile.middleName}`
+      dispAcct.innerHTML = `Account: ${userProfile.accountNumber}`
+      dispBal.innerHTML = `Balance:  ₦${userProfile.Balance}.00`
+      dat.innerHTML = `BVN: ${userProfile.bvn}`
       
 
       
