@@ -18,7 +18,7 @@
   }
 </style>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid border">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
           <div class="col-md-3 mb-2 mb-md-0">
             <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -26,7 +26,7 @@
             </a>
           </div>
     
-          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <ul class="nav col-12 col-md-auto justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2">Home</a></li>
             <li><a href="#" class="nav-link px-2">Features</a></li>
             <li><a href="#" class="nav-link px-2">Pricing</a></li>
@@ -41,7 +41,7 @@
         </header>
       </div>
 
-  <section class="d-flex">
+  <section class="d-flex shadow">
     <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 200px;">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <svg class="bi pe-none" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
@@ -77,14 +77,20 @@
         <li>
           <a href="#" class="nav-link text-dark">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-            Customers
+            Financial Service
           </a>
         </li>
         <hr>
         <li>
           <a href="#" class="nav-link text-dark">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-            Settings
+            Customers
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Settings  
           </a>
         </li>
         <li>
@@ -96,21 +102,27 @@
         <li>
           <a href="#" class="nav-link text-dark">
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Help
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-dark">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
             Logout
           </a>
         </li>
       </ul>
       </div>
-      <div class="d-flex">
-        <div class=" m-5 rounded-3 w-50">
-          <img src="./images/classic-removebg-preview.png" width="100%" alt="">
+      <div class="d-flex border border-info">
+        <div class="pt-3 ps-5 m-5 rounded-5 shadow w-50 h-50">
+          <img src="./images/5f3391eb341718f001f3cc474af1ad61-removebg-preview.png" width="60%" alt="">
         </div>
-        <div class=" m-5 rounded-3 w-50">
-          <h6>Name:</h6>
-          <h3 id="dispName"></h3>
-          <h6>Account:</h6>
+        <div class=" m-5 border rounded-5 ps-5 shadow pt-5 w-50 h-50">
+          <!-- <h3>Name:</h6> -->
+          <h2 id="dispName"></h2>
+          <!-- <h3>Account:</h6> -->
           <h2 id="dispAcct"></h2>
-          <h6>Total Balance:</h6>
+          <!-- <h3>Total Balance:</h6> -->
           <h2 id="dispBal"></h2>
           <div id="dat"></div>
         </div>
@@ -123,9 +135,9 @@
       let userProfile = JSON.parse(localStorage.getItem("newInputs"))
       
       dispFirst.innerHTML = `Hi ${userProfile.firstName}`
-      dispName.innerHTML = `${userProfile.lastName} ${userProfile.firstName}  ${userProfile.middleName}`
-      dispAcct.innerHTML = `${userProfile.accountNumber}`
-      dispBal.innerHTML = `$${userProfile.Balance}.00`
+      dispName.innerHTML = `NAME: ${userProfile.lastName} ${userProfile.firstName}  ${userProfile.middleName}`
+      dispAcct.innerHTML = `ACCOUNT: ${userProfile.accountNumber}`
+      dispBal.innerHTML = `BALANCE: $${userProfile.Balance}.00`
       
 
       
