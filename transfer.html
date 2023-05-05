@@ -15,21 +15,22 @@
     
 
     <script>
-        let allAccounts = JSON.parse(localStorage.getItem("newInputs"))
+        let currentUser = JSON.parse(localStorage.getItem("newInputs"))
         let userProfile = JSON.parse(localStorage.getItem("customerInput"))
-        // console.log(userProfile.Balance);
-        // console.log(allAccounts)
-
-
-
+        console.log(currentUser.firstName)
+        console.log(currentUser.accountNumber)
+        console.log(currentUser.Balance)
+        
+        
         const transfer = () => {
             for (let index = 0; index < userProfile.length; index++) {
                 if(acct.value==userProfile[index].accountNumber) {
-                    newReceiverValue = userProfile[index].Balance + Number(amount.value)
-                    newBalance = allAccounts.Balance -  Number(amount.value)
-                    disp.innerHTML = newReceiverValue
-                    localStorage.getItem(userProfile[index].Balance)
-                    localStorage.setItem(userProfile[index].Balance, newReceiverValue)
+                 currentUser.Balance = Number(currentUser.Balance) - Number(amount.value)
+                 userProfile[index].Balance = Number(userProfile[index].Balance)+Number(amount.value)
+                 console.log(currentUser.Balance);
+                 console.log(userProfile[index].Balance);
+                 localStorage.setItem("newInputs",JSON.stringify(currentUser))
+                 localStorage.setItem("customerInput".JSON.stringify(userProfile))
                 }    
             }
         }
