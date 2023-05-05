@@ -9,7 +9,9 @@
 <body>
     <input type="text" placeholder="Account" id="acct">
     <input type="text" placeholder="Amount" id="amount">
+    <input type="text" placeholder="Pin" id="transpin">
     <button onclick="transfer()">Transfer</button>
+    
 
     <div id="disp"></div>
     
@@ -24,14 +26,15 @@
         
         const transfer = () => {
             for (let index = 0; index < userProfile.length; index++) {
-                if(acct.value==userProfile[index].accountNumber) {
-                 currentUser.Balance = Number(currentUser.Balance) - Number(amount.value)
-                 userProfile[index].Balance = Number(userProfile[index].Balance)+Number(amount.value)
+                if(transpin.value==userProfile[index].pin) {
+                 userProfile[index].Balance = Number(currentUser.Balance) - Number(amount.value)
                  console.log(currentUser.Balance);
-                 console.log(userProfile[index].Balance);
-                 localStorage.setItem("newInputs",JSON.stringify(currentUser))
-                 localStorage.setItem("customerInput".JSON.stringify(userProfile))
-                }    
+                 localStorage.setItem("customerInput",JSON.stringify(userProfile))
+                //  localStorage.setItem("newInputs",JSON.stringify(currentUser))
+                } else if(acct.value==userProfile[index].accountNumber)
+                userProfile[index].Balance = Number(userProfile[index].Balance)+Number(amount.value)
+                localStorage.setItem("customerInput",JSON.stringify(userProfile))
+                console.log(userProfile[index].Balance);
             }
         }
     </script>
