@@ -35,13 +35,12 @@
             <option value="Others">Others</option>
         </select>
         <input type="text" class="form-control my-2" placeholder="Email Address" id="mail">
-        <input type="text" class="form-control my-2" placeholder="BVN" id="bvn">
+        <!-- <input type="text" class="form-control my-2" placeholder="BVN" id="bvn"> -->
         <input type="text" class="form-control my-2" placeholder="Address" id="add">
         <input type="text" class="form-control my-2" placeholder="Next Of Kin" id="next">
         <input type="text" class="form-control my-2" placeholder="Transaction Pin" id="pin">
         <input type="text" class="form-control my-2" placeholder="Password" id="pass">
         <button class="btn w-100 text-light" onclick="createAccount()">Create Account</button>
-
 
 
         <script>
@@ -56,14 +55,14 @@
                 lastName: ln.value,
                 middleName: mn.value,
                 email: mail.value,
-                bvn: bvn.value,
+                bvn: `223${Math.round(Math.random()*100000000)}`,
                 address: add.value,
                 nok: next.value,
                 pin: pin.value,
                 password: pass.value,
                 Gender:gender.value,
                 Balance : 1000.00,
-                accountNumber: `123${Math.round(Math.random()*10000000)}`
+                accountNumber: `900${Math.round(Math.random()*10000000)}`
             }
             userProfile.push(user)
             console.log(userProfile);
