@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
     <title>Document</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgba(#2ca1a8,0), rgba(255,255,255,1));
+            background-color: #2ca1a8;
+        }
+        .mx-auto {
+            margin-top: 10%;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" placeholder="Account" id="acct">
-    <input type="text" placeholder="Amount" id="amount">
-    <input type="text" placeholder="Pin" id="transpin">
-    <button onclick="transfer()">Transfer</button>
+
+    
+    <div class="mx-auto w-50 rounded-3 shadow">
+    <p>Your transfer Limit is: 5,000,000</p>
+    <input class="form-control my-2" type="text" placeholder="Enter Beneficiary Account" id="acct">
+    <!-- <input class="form-control my-2" type="text" id="name"> -->
+    <input class="form-control my-2" type="text" placeholder="Enter Amount ₦" id="amount">
+    <input class="form-control my-2" type="text" placeholder="Enter Your Transaction Pin" id="transpin">
+    <textarea class="form-control" placeholder="Remarks"></textarea>
+    <button class="btn btn-dark w-100 my-2" onclick="transfer()">Transfer</button>
+    </div>
     
 
     <div id="disp"></div>
@@ -37,6 +54,7 @@
                 localStorage.setItem("customerInput",JSON.stringify(userProfile))
                 console.log(userProfile[index].Balance);
             }
+            
         }
     </script>
 </body>
